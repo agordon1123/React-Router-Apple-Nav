@@ -9,9 +9,9 @@ import SubNav from './SubNav';
 const Nav = props => {
     return (
        <div className='nav'>
-           {console.log(appleData[0].subLinks)}
+           {console.log('appleData[0].subLinks', appleData[0].subLinks)}
            {console.log(appleData[0].subLinks[0].img)}
-           {console.log(appleData.name)}
+           {console.log('appleData', appleData)}
 
            <img src="https://img.icons8.com/ios/22/ffffff/mac-os.png" />
 
@@ -22,41 +22,15 @@ const Nav = props => {
             <img src="https://img.icons8.com/ios/22/ffffff/search--v1.png" />
             <img src="https://img.icons8.com/ios/22/ffffff/shopping-cart.png" />
 
-            {/* {appleData.map(apple => {
-                console.log('apple.subLinks', apple.subLinks)
-                apple.subLinks.map(sub => {
-                    console.log('sub', sub)
-                   return <Route path={`/${sub.name}`} render={<SubNav {...props} subLinks={apple.subLinks} />} />
-                })
-            })} */}
-
-            {/* {appleData.map(apple => {
-                return <Route path={`/${apple.name}`} render={<SubNav {...props} subLinks={apple.subLinks} />} />
-                }
-            )} */}
-
-           {/* <ul className='nav'>
-               <NavLink to='/'>
-                   <img src="https://img.icons8.com/ios/22/000000/mac-os.png" />
-               </NavLink>
-               <NavLink to='/mac' className='navLink'>Mac</NavLink>
-               <NavLink to='/pad' className='navLink'>iPad</NavLink>
-               <NavLink to='/phone' className='navLink'>iPhone</NavLink>
-               <NavLink to='watch' className='navLink'>Watch</NavLink>
-               <NavLink to='/tv' className='navLink'>TV</NavLink>
-               <NavLink to='/music' className='navLink'>Music</NavLink>
-               <NavLink to='/support' className='navLink'>Support</NavLink>
-               <img src="https://img.icons8.com/ios/22/000000/search--v1.png" />
-               <img src="https://img.icons8.com/ios/22/000000/shopping-cart.png" />
-           </ul>
-           <Route path='/' />
-           <Route path='/mac' exact render={props => <SubNav {...props} appleData={appleData} />} />
-           <Route path='/pad' />
-           <Route path='/phone' />
-           <Route path='/watch' />
-           <Route path='/tv' />
-           <Route path='/music' />
-           <Route path='/support' /> */}
+            {appleData.map(apple => {
+                return <Route path={`/${apple.name}`} render={(props) => (
+                    <SubNav 
+                    {...props}
+                    subLinks={apple.subLinks}
+                    appleData={appleData}
+                    />
+                )} />
+            })}
        </div>
     )
 }
