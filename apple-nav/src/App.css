@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px 0;
+  background-color: #313131;
+}
+.navLink {
+  font-size: 14px;
+  text-decoration: none;
+  color: #ffffff;
+}
