@@ -1,17 +1,12 @@
 import React from 'react';
 import { NavLink, Route } from 'react-router-dom';
 
-import Mac from './Mac';
-import Pad from './Pad';
-import Phone from './Phone';
-import Watch from './Watch';
-import TV from './TV';
-import Music from './Music';
-import Support from './Support';
+import appleData from '../data';
 
 const Nav = () => {
     return (
        <div>
+           {console.log(appleData)}
            <ul className='nav'>
                <NavLink to='/'>
                    <img src="https://img.icons8.com/ios/22/000000/mac-os.png" />
@@ -27,13 +22,13 @@ const Nav = () => {
                <img src="https://img.icons8.com/ios/22/000000/shopping-cart.png" />
            </ul>
            <Route path='/' />
-           <Route path='/mac' component={Mac} />
-           <Route path='/pad' component={Pad} />
-           <Route path='/phone' component={Phone} />
-           <Route path='/watch' component={Watch} />
-           <Route path='/tv' component={TV} />
-           <Route path='/music' component={Music} />
-           <Route path='/support' component={Support} />
+           <Route path='/mac' />
+           <Route path='/pad' />
+           <Route path='/phone' />
+           <Route path='/watch' />
+           <Route path='/tv' />
+           <Route path='/music' />
+           <Route path='/support' />
        </div>
     )
 }
