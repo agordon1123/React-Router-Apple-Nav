@@ -6,24 +6,34 @@ import appleData from '../data';
 import SubNav from './SubNav';
 
 
-const Nav = () => {
+const Nav = props => {
     return (
        <div className='nav'>
            {console.log(appleData[0].subLinks)}
            {console.log(appleData[0].subLinks[0].img)}
+           {console.log(appleData.name)}
 
            <img src="https://img.icons8.com/ios/22/ffffff/mac-os.png" />
 
            {appleData.map(apple => {
-                return <NavLink to={apple.name} className='navLink'>{apple.name}</NavLink>
+                return <NavLink to={apple.name} subLinks={apple.subLinks} className='navLink'>{apple.name}</NavLink>
             })}
 
             <img src="https://img.icons8.com/ios/22/ffffff/search--v1.png" />
             <img src="https://img.icons8.com/ios/22/ffffff/shopping-cart.png" />
 
-            <SubNav />
+            {/* {appleData.map(apple => {
+                console.log('apple.subLinks', apple.subLinks)
+                apple.subLinks.map(sub => {
+                    console.log('sub', sub)
+                   return <Route path={`/${sub.name}`} render={<SubNav {...props} subLinks={apple.subLinks} />} />
+                })
+            })} */}
 
-            <Route to={appleData.name} />
+            {/* {appleData.map(apple => {
+                return <Route path={`/${apple.name}`} render={<SubNav {...props} subLinks={apple.subLinks} />} />
+                }
+            )} */}
 
            {/* <ul className='nav'>
                <NavLink to='/'>

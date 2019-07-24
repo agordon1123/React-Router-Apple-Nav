@@ -5,10 +5,10 @@ import Nav from './components/Nav';
 
 import appleData from './data';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
-      <Nav appleData={appleData} />
+      <Nav {...props} appleData={appleData} />
     </div>
   );
 }
